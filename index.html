@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>FLUCK API</title>
-    <meta http-equiv="refresh" content="0; url=PASTE_LINK_MOI_DAY">
+    <script>
+        fetch('config.json')
+            .then(r => r.json())
+            .then(data => {
+                window.location.href = data.api_url;
+            })
+            .catch(() => {
+                document.body.innerHTML = '<h2>Lỗi kết nối</h2>';
+            });
+    </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <p>Đang chuyển hướng...</p>
 </body>
 </html>
